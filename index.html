@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Prompt Playground</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 0.25rem;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 10px 20px;
+      }
+      #outputBox {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: #f9f9f9;
+        border: 1px solid #ccc;
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Interactive Prompt Playground</h2>
+
+    <label for="systemPrompt">System Prompt</label>
+    <textarea id="systemPrompt">
+You are a product description generator.</textarea
+    >
+
+    <label for="userPrompt">User Prompt</label>
+    <textarea id="userPrompt">
+Generate a creative product description for:</textarea
+    >
+
+    <label for="product">Product Name</label>
+    <input id="product" type="text" placeholder="e.g. iPhone, Tesla" />
+
+    <label for="model">Model</label>
+    <select id="model">
+      <option value="gemini-2.0-flash-001">gemini-2.0-flash-001</option>
+    </select>
+
+    <label for="temperature">Temperature</label>
+    <input
+      id="temperature"
+      type="range"
+      min="0"
+      max="2"
+      step="0.1"
+      value="0.7"
+    />
+    <span id="tempValue">0.7</span>
+
+    <label for="maxTokens">Max Tokens</label>
+    <input id="maxTokens" type="number" value="150" />
+
+    <label for="presencePenalty">Presence Penalty</label>
+    <input
+      id="presencePenalty"
+      type="range"
+      min="0"
+      max="2"
+      step="0.1"
+      value="0.0"
+    />
+    <span id="presenceValue">0.0</span>
+
+    <label for="frequencyPenalty">Frequency Penalty</label>
+    <input
+      id="frequencyPenalty"
+      type="range"
+      min="0"
+      max="2"
+      step="0.1"
+      value="0.0"
+    />
+    <span id="frequencyValue">0.0</span>
+
+    <button onclick="generateContent()">Submit</button>
+
+    <div id="outputBox"></div>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
