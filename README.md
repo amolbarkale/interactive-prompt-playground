@@ -69,12 +69,14 @@ Redmi Note 9 features a 6.53" FHD+ display, a 48MP AI quad camera, and a 5020mAh
 Powered by MediaTek Helio G85, it supports fast charging and runs MIUI based on Android.
 
 📁 Project Structure
+```
 interactive-prompt-playground/
 ├── index.html          # Main UI interface
 ├── script.js           # Logic for calling Gemini API
 ├── config.js           # 🔐 Your local API key
 ├── .gitignore          # Git ignore rules
 └── README.md           # This documentation
+```
 
 ⚙️ Configuration
 Model Parameters Explained
